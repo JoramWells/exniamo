@@ -1,9 +1,8 @@
-import React,{lazy,Suspense} from 'react'
+import React,{Suspense} from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-const HomeScreen = lazy(()=>import('./components/HomeScreen'))
-const SearchView = lazy(()=>import('./components/SearchView'))
-const NavBar = lazy(()=>import('./components/NavBar'))
-
+import HomeScreen from './components/HomeScreen'
+import SearchView from './components/SearchView'
+import NavBar from './components/NavBar'
 
 
 function App() {
