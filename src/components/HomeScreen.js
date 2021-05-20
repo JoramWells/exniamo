@@ -36,6 +36,8 @@ function HomeScreen() {
         display: "block",
         margin: "auto",
         padding: "1rem",
+        marginTop:"5rem"
+        
       }}
     >
       <Row justify="space-around" align="middle" gutter={[16, 16]}>

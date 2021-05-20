@@ -18,7 +18,7 @@ export default function SearchView(props) {
   const { loadingDetail, postDetail, errorDetail } = PostDetail;
 
   return (
-    <Row  justify="center" align="middle">
+    <Row  justify="center" align="middle" style={{marginTop:"5rem"}}>
       <Col style={{maxWidth:"75%"}}>
 
       {loadingDetail ? (

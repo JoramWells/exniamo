@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { withRouter,Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import {searchPost} from '../_actions/postActions'
-import TextLoop from 'react-text-loop';
+import { HomeOutlined } from "@ant-design/icons";
 const { Search } = Input;
 
 
@@ -28,17 +28,10 @@ function NavBar(props) {
   };
   return (
     <>
-    <Alert message={
-      <TextLoop mask>
-        <div style={{fontSize:"1rem", color:"#3f3b3b"}}>x10 faster</div>
-        <div style={{fontSize:"1rem", color:"#3f3b3b"}}>-50% discount</div>
-        <div style={{fontSize:"1rem", color:"#3f3b3b"}}>Experiences that matter to your business</div>
-      </TextLoop>
-    } type="warning" banner showIcon closable/>
-    <nav className="menu">
+    <nav className="menu" style={{position:"fixed", width:"100%", zIndex:"1",top:"0"}}>
       <div className="menu__logo">
-        <Link to="/">
-        Logo
+        <Link to="/" style={{color:"white"}}>
+        <HomeOutlined style={{fontSize:"1.5rem"}}/> Home
 
         </Link>
       </div>
