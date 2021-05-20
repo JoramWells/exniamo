@@ -16,10 +16,14 @@ function NavBar(props) {
  }
 
   const onSearch = (value) => {
+    
+    if(value==="")
+      return
     message.info("Connecting...");
     getData(value)
     setTimeout(() => {
-      props.history.push(`/search/${value}`);
+       props.history.push(`/search/${value}`)
+      
     });
   };
   return (
@@ -39,14 +43,14 @@ function NavBar(props) {
         </Link>
       </div>
       <div className="menu__container">
-        <Menu mode="horizontal">
+        <Menu mode="horizontal" style={{backgroundColor:"#3f3b3b"}}>
 
           <Space direction="horizontal">
             <Search
               onSearch={onSearch}
               placeholder="Seach anything..."
               style={{ margin: "1rem" }}
-              onChange={()=>setValue()}
+              onChange={(e)=>setValue(e.target.value)}
               value={value}
             />
           </Space>

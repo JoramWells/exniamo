@@ -32,7 +32,7 @@ function HomeScreen() {
   return (
     <div
       style={{
-        maxWidth: "50%",
+        maxWidth: "75%",
         display: "block",
         margin: "auto",
         padding: "1rem",
@@ -67,8 +67,12 @@ function HomeScreen() {
                         rowIndex
                       >
                         <Col style={style}>
-                          <Card>
-                            <h3>{post.id}</h3>
+                          <Card
+                          style={{backgroundColor:"#3f3b3b",color:"#278ea5", height:"50rem",overflowY: "scroll"}}
+                          >
+                            <div style={{backgroundColor:"#278ea5",color:"white", borderRadius:"100px", width:"2.2rem",padding:"auto", textAlign:"center"}}>
+                            <b>{post.id}</b>
+                            </div>
                             {post.description}
                           </Card>
                         </Col>

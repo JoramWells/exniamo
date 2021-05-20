@@ -1,4 +1,4 @@
-import { Card, Empty, Row, Result, Button } from "antd";
+import { Card, Empty, Row, Result, Button,Col } from "antd";
 import React from "react";
 import { useSelector } from "react-redux";
 import Highlighter from "react-highlight-words";
@@ -18,9 +18,11 @@ export default function SearchView(props) {
   const { loadingDetail, postDetail, errorDetail } = PostDetail;
 
   return (
-    <div>
+    <Row  justify="center" align="middle">
+      <Col style={{maxWidth:"75%"}}>
+
       {loadingDetail ? (
-        <Row justify="center">Loading...</Row>
+        <div justify="center">Loading...</div>
       ) : errorDetail ? (
         <Result
           title={errorDetail}
@@ -31,13 +33,13 @@ export default function SearchView(props) {
         <div>
           {postDetail ? (
             postDetail.map((post) => (
-              <Card style={{ height: 150, overflowY: "scroll", marginTop: 10 }}>
+              <Card style={{ height: 150, overflowY: "scroll", marginTop: "2px", backgroundColor:"#3f3b3b",color:"#278ea5" }}>
                 <Highlighter
                   activeClassName={styles.Active}
                   highlightStyle={{
-                    color: "blue",
-                    padding: "0",
-                    backgroundColor: "yellow",
+                    backgroundColor: "#eac100",
+                    borderRadius:"5px",
+                    padding:".1rem"
                   }}
                   searchWords={value}
                   autoEscape
@@ -50,6 +52,7 @@ export default function SearchView(props) {
           )}
         </div>
       )}
-    </div>
+      </Col>
+    </Row>
   );
 }
