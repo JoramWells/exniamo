@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, memo } from "react";
 import { Card, Col, Row, Result,Button } from "antd";
-import {RedoOutlined} from '@ant-design/icons'
+import {HourglassOutlined, RedoOutlined} from '@ant-design/icons'
 import { useDispatch, useSelector } from "react-redux";
 import { listPost } from "../_actions/postActions";
 import {
@@ -29,6 +29,8 @@ function HomeScreen() {
 
     return () => {};
   }, [dispatch]);
+
+  
   return (
     <div
       style={{
@@ -42,7 +44,9 @@ function HomeScreen() {
     >
       <Row justify="space-around" align="middle" gutter={[16, 16]}>
         {loading ? (
-          <div>Loading..</div>
+          <Row justify="center">
+            <HourglassOutlined spin style={{fontSize:"2rem", color:"grey"}} />
+          </Row>
         ) : error ? (
           <Result
             status="500"

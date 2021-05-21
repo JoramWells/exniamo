@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.searchResults {
+  position:absolute; 
+  /* top:50px;  */
+  background-color: white; 
+  border: 1px solid black; 
+  z-index: 50;
+  /* right: 50px; */
+  transition: all ease-in-out 0.2s;
+  transform: translate(-50%, -50%);
+  float: center;
+}
+
+.inputRow {
+  position:relative;
+  overflow:auto;
+}
+
+input {
+  width: 98%;
+}
+
