@@ -1,4 +1,4 @@
-import { Button, Input, Menu, message, Space, Upload, Modal, Form } from "antd";
+import { Button, Input, Menu, message, Space, Upload, Modal, Form,Row,Card, Col } from "antd";
 import React, { useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -132,13 +132,26 @@ function NavBar(props) {
       ))}</div> */}
 
       <Modal visible={visible} onOk={handleOk} onCancel={handleCancel}>
-        <Form encType="multipart/form-data">
+        <Card>
+        <Row>
+          <Col md={12}>
+          <Form encType="multipart/form-data">
+          <Form.Item
+          >
+            <Input placeholder="body, description, category" />
+          </Form.Item>
           <Form.Item>
             <Upload {...prop}>
               <Button icon={<UploadOutlined />}>UPLOAD IMAGE</Button>
             </Upload>
           </Form.Item>
         </Form>
+          </Col>
+        
+        </Row>
+        </Card>
+
+
       </Modal>
     </>
   );
