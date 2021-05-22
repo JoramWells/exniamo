@@ -7,6 +7,7 @@ import {
   CloudUploadOutlined,
   HomeOutlined,
   UploadOutlined,
+  UserAddOutlined,
 } from "@ant-design/icons";
 const { Search } = Input;
 
@@ -56,19 +57,19 @@ function NavBar(props) {
       }
     },
   };
-//   if (loading) {
-//     return <div>loading...</div>;
-//   } else if (error) {
-//     return <div>error...</div>;
-//   } 
-//   const filteredPosts = posts.filter((post) => {
-//     return post.description.toLowerCase().includes(value.toLowerCase());
-//   });
-// console.log(filteredPosts)
-  
+  //   if (loading) {
+  //     return <div>loading...</div>;
+  //   } else if (error) {
+  //     return <div>error...</div>;
+  //   }
+  //   const filteredPosts = posts.filter((post) => {
+  //     return post.description.toLowerCase().includes(value.toLowerCase());
+  //   });
+  // console.log(filteredPosts)
 
   return (
     <>
+
       <nav
         className="menu"
         style={{ position: "fixed", width: "100%", zIndex: "1", top: "0" }}
@@ -89,16 +90,40 @@ function NavBar(props) {
                 value={value}
               />
             </Space>
+            <Menu.Item
+              style={{ float: "right", color: "white", marginTop: "0.9rem" }}
+              icon={
+                <UserAddOutlined
+                  style={{
+                    fontSize: "1.5rem",
+                    margin: "0",
+                    padding: "0",
+                    color: "#a7ff83",
+                  }}
+                />
+              }
+            />
+            <Menu.Item >
+              <Link to="/demo" style={{color:"white"}} >
+              Demo
+              </Link>
+            </Menu.Item>
 
             <Menu.Item
               onClick={showModal}
               style={{ float: "right", color: "white", marginTop: "0.9rem" }}
               icon={
                 <CloudUploadOutlined
-                  style={{ fontSize: "1.5rem", margin: "0", padding: "0",color:"#a7ff83" }}
+                  style={{
+                    fontSize: "1.5rem",
+                    margin: "0",
+                    padding: "0",
+                    color: "#a7ff83",
+                  }}
                 />
               }
-            ></Menu.Item>
+            />
+
           </Menu>
         </div>
       </nav>

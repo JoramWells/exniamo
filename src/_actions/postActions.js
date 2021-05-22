@@ -12,7 +12,7 @@ const listPost = () => async (dispatch) => {
   try {
     dispatch({ type: POST_LIST_REQUEST });
     await axios
-      .get("https://fancynancyapi.herokuapp.com/posts")
+      .get("http://localhost:8000/posts")
       .then((response) => {
         dispatch({ type: POST_LIST_SUCCESS, payload: response.data });
       })
@@ -28,7 +28,7 @@ const searchPost = (dataToSubmit) => async (dispatch) => {
   dispatch({ type: POST_DETAIL_REQUEST, payload: dataToSubmit });
   try {
     await axios
-      .post("https://fancynancyapi.herokuapp.com/getDetail", dataToSubmit)
+      .post("http://localhost:8000/getDetail", dataToSubmit)
       .then((response) => {
         dispatch({ type: POST_DETAIL_SUCCESS, payload: response.data });
       })
