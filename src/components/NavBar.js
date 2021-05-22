@@ -2,6 +2,7 @@ import { Button, Input, Menu, message, Space, Upload, Modal, Form,Row,Card, Col 
 import React, { useState } from "react";
 import { withRouter, Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import Cookie from 'js-cookie'
 import { searchPost } from "../_actions/postActions";
 import {
   CloudUploadOutlined,
@@ -28,7 +29,8 @@ function NavBar(props) {
   }
 
   async function getData(value) {
-    await dispatch(searchPost({ keyword: value, min_videos: "2" }));
+    Cookie.set("value", value)
+    await dispatch(searchPost({ keyword: Cookie.get('value'), min_videos: "2" }));
   }
 
   const onSearch = (value) => {
@@ -133,16 +135,12 @@ function NavBar(props) {
 
       <Modal visible={visible} onOk={handleOk} onCancel={handleCancel}>
         <Card>
-        <Row>
+        <Row justify="center">
           <Col md={12}>
           <Form encType="multipart/form-data">
-          <Form.Item
-          >
-            <Input placeholder="body, description, category" />
-          </Form.Item>
           <Form.Item>
             <Upload {...prop}>
-              <Button icon={<UploadOutlined />}>UPLOAD IMAGE</Button>
+              <Button icon={<UploadOutlined />}>UPLOAD FILE</Button>
             </Upload>
           </Form.Item>
         </Form>
