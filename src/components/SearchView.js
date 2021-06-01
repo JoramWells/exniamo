@@ -1,15 +1,27 @@
 import { Card, Empty, Row, Result, Button, Col } from "antd";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Highlighter from "react-highlight-words";
 import styles from "./styles.css";
 import { HourglassOutlined, RedoOutlined } from "@ant-design/icons";
+import Cookie from 'js-cookie'
+import { searchPost } from "../_actions/postActions";
 
 function reloadHandler() {
   window.location.reload();
 }
 export default function SearchView(props) {
+  const dispatch = useDispatch()
   const value = props.match.params.val.split(" ");
+  useEffect(() => {
+
+    dispatch(searchPost({ keyword: Cookie.get('value'), min_videos: "2" }));
+    
+  
+    return () => {
+ 
+    }
+  }, [dispatch])
   // const search = props.location.search;
   // const params = new URLSearchParams(search);
   // const category = params.getAll("val");

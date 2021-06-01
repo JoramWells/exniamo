@@ -21,12 +21,16 @@ function NavBar(props) {
   function handleOk() {
     setVisible(false);
   }
+  function gotoUpload(){
+    props.history.push('/upload_file')
+
+  }
   function handleCancel() {
     setVisible(false);
   }
-  function showModal() {
-    setVisible(true);
-  }
+  // function showModal() {
+  //   setVisible(true);
+  // }
 
   async function getData(value) {
     Cookie.set("value", value)
@@ -112,7 +116,7 @@ function NavBar(props) {
             </Menu.Item>
 
             <Menu.Item
-              onClick={showModal}
+              onClick={gotoUpload}
               style={{ float: "right", color: "white", marginTop: "0.9rem" }}
               icon={
                 <CloudUploadOutlined
