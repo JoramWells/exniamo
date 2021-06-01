@@ -9,6 +9,7 @@ import {
   CellMeasurer,
   CellMeasurerCache,
 } from "react-virtualized";
+import NavBar from "./NavBar";
 
 function reloadHandler () {
   window.location.reload();
@@ -32,6 +33,8 @@ function HomeScreen() {
 
   
   return (
+   <>
+   <NavBar/>
     <div
       style={{
         maxWidth: "75%",
@@ -92,6 +95,7 @@ function HomeScreen() {
         )}
       </Row>
     </div>
+   </>
   );
 }
 export default memo(HomeScreen);
