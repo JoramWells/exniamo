@@ -30,9 +30,13 @@ export default function UploadFile() {
               </div>
               <div>
                 <div className="p-4 hover:shadow-md m-4">
-                  <p className="text-lg m-0 text-blue-500 hover:cursor-pointer hover:text-blue-600">
+                    <div>
+                                         <p className="text-lg m-0 text-blue-500 hover:cursor-pointer hover:text-blue-600">
                     1. Create a new index
-                  </p>
+                  </p> 
+                  
+                    </div>
+
                   <p className="text-gray-500 text-sm">
                     An index stores the type of data you want to search
                   </p>
